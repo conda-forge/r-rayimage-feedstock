@@ -1,4 +1,4 @@
-{% set version = "0.5.1" %}
+{% set version = "0.6.2" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rayimage_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rayimage/rayimage_{{ version }}.tar.gz
-  sha256: a1f70dee11b8db6f7be989ebeb8be6a978aa989076c51e5031085e8b9a83b07c
+  sha256: bffcabf25b2614a6802fddfcbca92dc7896d1f46edf6d6807dc8eebe20271afe
 
 build:
   merge_build_host: true  # [win]
