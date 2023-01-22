@@ -1,13 +1,15 @@
 About r-rayimage
 ================
 
-Home: https://www.rayimage.dev, https://github.com/tylermorganwall/rayimage
+Home: https://www.rayimage.dev
 
 Package license: GPL-3.0-only
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-rayimage-feedstock/blob/main/LICENSE.txt)
 
 Summary: Uses convolution-based techniques to generate simulated camera bokeh, depth of field, and other camera effects, using an image and an optional depth map. Accepts both filename inputs and in-memory array representations of images and matrices. Includes functions to perform 2D convolutions, reorient and resize images/matrices, add image overlays, generate camera vignette effects, and add titles to images.
+
+Development: https://github.com/tylermorganwall/rayimage
 
 Current build status
 ====================
