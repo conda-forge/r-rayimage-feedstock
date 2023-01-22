@@ -21,10 +21,10 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}              # [not win]
-    - {{ compiler('m2w64_c') }}        # [win]
-    - {{ compiler('cxx') }}            # [not win]
-    - {{ compiler('m2w64_cxx') }}      # [win]
+    - {{ compiler('c') }}          # [not win]
+    - {{ compiler('m2w64_c') }}    # [win]
+    - {{ compiler('cxx') }}        # [not win]
+    - {{ compiler('m2w64_cxx') }}  # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
     - {{ posix }}sed               # [win]
@@ -33,23 +33,21 @@ requirements:
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
-    - r-rcpp
-    - r-rcpparmadillo
+    - r-gridextra
     - r-jpeg
-    - r-magrittr
     - r-png
     - r-progress
-    - r-raster
+    - r-rcpp
+    - r-rcpparmadillo
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
-    - r-rcpp
-    - r-rcpparmadillo
+    - r-gridextra
     - r-jpeg
-    - r-magrittr
     - r-png
     - r-progress
-    - r-raster
+    - r-rcpp
+    - r-rcpparmadillo
 
 test:
   commands:
@@ -57,7 +55,8 @@ test:
     - "\"%R%\" -e \"library('rayimage')\""  # [win]
 
 about:
-  home: https://www.rayimage.dev, https://github.com/tylermorganwall/rayimage
+  home: https://www.rayimage.dev
+  dev_url: https://github.com/tylermorganwall/rayimage
   license: GPL-3.0-only
   summary: Uses convolution-based techniques to generate simulated camera bokeh, depth of field, and other camera effects, using an image and an optional depth map. Accepts both filename inputs and in-memory array representations of images and matrices. Includes functions to perform 2D convolutions, reorient and resize images/matrices,
     add image overlays, generate camera vignette effects, and add titles to images.
@@ -69,24 +68,3 @@ extra:
   recipe-maintainers:
     - conda-forge/r
     - izahn
-
-# Package: rayimage
-# Type: Package
-# Title: Image Processing for Simulated Cameras
-# Version: 0.3.1
-# Author: Tyler Morgan-Wall
-# Maintainer: Tyler Morgan-Wall <tylermw@gmail.com>
-# Description: Uses convolution-based techniques to generate simulated camera bokeh, depth of field, and other camera effects, using an image and an optional depth map. Accepts both filename inputs and in-memory array representations of images and matrices. Includes functions to perform 2D convolutions, reorient and resize images/matrices, add image overlays, generate camera vignette effects, and add titles to images.
-# License: GPL-3.0-only
-# LazyData: true
-# Depends: R (>= 3.0.2)
-# Imports: Rcpp, raster, png, magrittr, jpeg, grDevices
-# Suggests: magick
-# LinkingTo: Rcpp, RcppArmadillo, progress
-# RoxygenNote: 7.1.0
-# URL: https://www.rayimage.dev, https://github.com/tylermorganwall/rayimage
-# BugReports: https://github.com/tylermorganwall/rayimage/issues
-# NeedsCompilation: yes
-# Packaged: 2020-06-28 15:18:34 UTC; tyler
-# Repository: CRAN
-# Date/Publication: 2020-06-28 20:00:02 UTC
