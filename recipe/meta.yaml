@@ -1,4 +1,4 @@
-{% set version = "0.10.0" %}
+{% set version = "0.11.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rayimage_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rayimage/rayimage_{{ version }}.tar.gz
-  sha256: b4702a6abfa6a8a411f9e1972d44f310b7d3206636203d0269e782ba18a241eb
+  sha256: aada00b0d6b6dda53c6d958fa469360e03f71d4f89e2032d2c6ed207974bd214
 
 build:
   merge_build_host: true  # [win]
@@ -22,7 +22,9 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}          # [not win]
+    - {{ stdlib("c") }}            # [not win]
     - {{ compiler('m2w64_c') }}    # [win]
+    - {{ stdlib("m2w64_c") }}      # [win]
     - {{ compiler('cxx') }}        # [not win]
     - {{ compiler('m2w64_cxx') }}  # [win]
     - {{ posix }}filesystem        # [win]
