@@ -39,6 +39,7 @@ requirements:
     - r-progress
     - r-rcpp
     - r-rcpparmadillo
+    - r-tiff
   run:
     - r-base
     - r-gridextra
@@ -47,6 +48,7 @@ requirements:
     - r-progress
     - r-rcpp
     - r-rcpparmadillo
+    - r-tiff
 
 test:
   commands:
